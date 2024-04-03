@@ -1,6 +1,6 @@
 specVersion: 0.0.4
 description: Gravity
-repository: https://github.com/graphprotocol/graph-tooling
+repository: https://github.com/Andlyn666/ERC404
 schema:
   file: ./schema.graphql
 indexerHints:
