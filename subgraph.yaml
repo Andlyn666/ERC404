@@ -1,0 +1,35 @@
+specVersion: 0.0.4
+description: Gravity
+repository: https://github.com/graphprotocol/graph-tooling
+schema:
+  file: ./schema.graphql
+indexerHints:
+  prune: auto
+dataSources:
+  - kind: ethereum/contract
+    name: Gravity
+    network: mainnet
+    source:
+      abi: Gravity
+      startBlock: 0
+      endBlock: 8139437
+    context:
+      foo:
+        type: Bool
+        data: true
+      bar:
+        type: String
+        data: 'bar'
+    mapping:
+      kind: ethereum/events
+      apiVersion: 0.0.6
+      language: wasm/assemblyscript
+      entities:
+        - Gravatar
+      abis:
+        - name: Gravity
+          file: out/ERC404.sol/ERC404.json
+      eventHandlers:
+        - event: ERC20Transfer(indexed address,indexed address,uint256)
+          handler: handleERC20Transfer
+      file: ./mapping.ts

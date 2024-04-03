@@ -1,0 +1,7 @@
+# schema.graphql
+type MyEvent @entity {
+  id: ID!
+  addressFrom: Bytes!
+  addressTo: Bytes!
+  amount: BigInt!
+}
